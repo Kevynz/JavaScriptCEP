@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assincronismo em JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Entendendo o Assincronismo em JavaScript</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Assincronismo</a></li>
+            <li><a href="page2.html">Conceitos Avançados</a></li>
+            <li><a href="page3.html">Exemplos Assincronismo(temporario)</a></li>
+            <li><a href="page4.html">CAJ(temporario)</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="intro">
+            <p>O assincronismo em JavaScript permite que o código execute operações sem bloquear o fluxo principal da aplicação. Isso é fundamental para a performance, especialmente quando se trata de tarefas demoradas como chamadas de rede ou leitura de arquivos.</p>
+        </section>
+
+        <section class="topic">
+            <h2>AJAX (Asynchronous JavaScript and XML)</h2>
+            <p>
+                AJAX é uma técnica que permite atualizar partes específicas de uma página web sem recarregar toda a página. Usando <code>XMLHttpRequest</code> ou <code>fetch API</code>, ele realiza requisições ao servidor e manipula os dados dinamicamente.
+            </p>
+            <h3>Exemplo de Código:</h3>
+            <pre>
+<code>
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.exemplo.com/data", true);
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        console.log(JSON.parse(xhr.responseText));
+    }
+};
+xhr.send();
+</code>
+            </pre>
+        </section>
+
+        <section class="topic">
+            <h2>Promises</h2>
+            <p>
+                As Promises são objetos que representam um valor futuro. Elas permitem organizar código assíncrono de maneira clara e evitar o "callback hell".
+            </p>
+            <h3>Exemplo de Código:</h3>
+            <pre>
+<code>
+fetch('https://api.exemplo.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log('Erro:', error));
+</code>
+            </pre>
+        </section>
+
+        <section class="topic">
+            <h2>Async/Await</h2>
+            <p>
+                Async/Await é uma sintaxe moderna que facilita o trabalho com código assíncrono, tornando-o mais legível e próximo do código síncrono.
+            </p>
+            <h3>Exemplo de Código:</h3>
+            <pre>
+<code class="exemplos">
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.exemplo.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log('Erro:', error);
+    }
+}
+</code>
+            </pre>
+        </section>
+
+        <section class="topic">
+            <h2>fetch API</h2>
+            <p>
+                A <strong>fetch API</strong> é uma maneira moderna de realizar requisições HTTP em JavaScript, retornando Promises para facilitar o tratamento de respostas de servidores.
+            </p>
+            <h3>Exemplo de Código:</h3>
+            <pre>
+<code>
+fetch('https://api.exemplo.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log('Erro:', error));
+</code>
+            </pre>
+        </section>
+
+        <section class="conclusion">
+            <h2>Vantagens e Desvantagens</h2>
+            <p>
+                Cada técnica tem suas vantagens e desvantagens:
+            </p>
+            <ul>
+                <li><strong>AJAX</strong>: Flexível, mas mais verboso em comparação com a fetch API.</li>
+                <li><strong>Promises</strong>: Melhor organização de código, mas pode resultar em encadeamentos extensos.</li>
+                <li><strong>Async/Await</strong>: Código mais limpo e legível, mas requer cuidado ao trabalhar com concorrência.</li>
+                <li><strong>fetch API</strong>: Simples e moderna, mas requer verificação manual de erros e não possui suporte a algumas funcionalidades avançadas.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
