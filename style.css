@@ -1,33 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap');
 body {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* Estilo para o vídeo de fundo */
-.bg-video {
-    position: fixed; /* Posiciona o vídeo como fundo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cobre toda a tela */
     z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+    background-color:rgb(48, 47, 47);
 }
 
 header {
-    background-color: rgba(179, 45, 54, 0.8); /* Vermelho com opacidade */
+    background-color: rgba(37, 36, 36, 0.8); /* Vermelho com opacidade */
     color: white;
     padding: 10px 0;
     text-align: center;
 }
 nav {
-    background-color: rgba(51, 51, 51, 0.8); /* Cinza Escuro com opacidade */
+    background-color: rgba(243, 25, 127, 0.8);
     padding: 15px;
     text-align: center;
+    font-family: "Roboto", "san-serif";
 }
 nav a {
-    color: #F3A300; /* Amarelo */
+    color: #d1caca;
     text-decoration: none;
     margin: 0 15px;
 }
@@ -39,15 +33,18 @@ nav a {
     z-index: 1; /* Coloca o conteúdo acima do vídeo */
 }
 .research-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com opacidade */
+    background-color: rgba(31, 28, 28, 0.9); /* Fundo branco com opacidade */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 h2 {
-    color: #1B7F3A; /* Verde */
+    color: #3983c9; /* Verde */
 }
 h3 {
-    color: #006A8E; /* Azul */
+    color: #1d7694; /* Azul */
+}
+p {
+    color:#ee5fa6;
 }
